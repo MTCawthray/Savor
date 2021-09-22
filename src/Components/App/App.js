@@ -13,10 +13,7 @@ const App = () => {
         </h1>
       </header>
       <main>
-        <Route exact path="/" render={ ({ match }) => {
-          return <Search />
-          }
-        }/>
+        <Route exact path="/" component={Search}/>
         <Route exact path="/:recipeID" render={ ({ match }) => {
           return <DisplayArea />
           }
