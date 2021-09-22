@@ -7,7 +7,7 @@ const Search = () => {
       <input 
         type="text" 
         className="search-bar" 
-        defaultValue="find a recipe"
+        placeholder="find a recipe"
       />
       <button>Search Recipes</button>
     </form>
