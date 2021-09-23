@@ -1,17 +1,17 @@
 import './Search.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import apiCall from '../../utilities';
 
-const Search = (props) => {
-  // const [recipes, setRecipes] = useState([]);
+const Search = ({addRecipes}) => {
+  
   const [error, setError] = useState('');
   const [search, setSearch] = useState('');
 
   const submitSearch = (e) => {
     e.preventDefault();
     apiCall.getRecipes(search)
-      .then((data) => props.setRecipes(data.hits))
+      .then((data) => addRecipes(data.hits))
       .catch((err) => setError(err));
     setSearch('');
   }
@@ -25,12 +25,10 @@ const Search = (props) => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <Link to="/recipes" >
-        <button
+      <button
         onClick={submitSearch}
-        >Search Recipes
-        </button>
-      </Link>
+        >search
+      </button>
     </form>
   )
 }
