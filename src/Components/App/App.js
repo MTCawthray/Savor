@@ -1,14 +1,20 @@
 import { Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Search from '../Search/Search';
 import DisplayArea from '../DisplayArea/DisplayArea';
+import apiCall from '../../utilities';
 require('dotenv').config();
 
 const App = () => {
 
+  const [recipes, setRecipes] = useState([]);
+
   useEffect(() => {
-    console.log('key', process.env.REACT_APP_API_KEY)
+    apiCall.getRecipes('pasta')
+      .then((data) => setRecipes(data.hits))
+      .catch((err) => console.log('error from fetch', err))
+    console.log(recipes)
   }, [])
 
   return (
