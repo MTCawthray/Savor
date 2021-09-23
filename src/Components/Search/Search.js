@@ -11,8 +11,8 @@ const Search = () => {
     e.preventDefault();
     apiCall.getRecipes(search)
       .then((data) => setRecipes(data.hits))
-      .catch((err) => setError(err))
-
+      .catch((err) => setError(err));
+    setSearch('');
   }
 
   return (
@@ -21,6 +21,7 @@ const Search = () => {
         type="text" 
         className="search-bar" 
         placeholder="find a recipe"
+        value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
       <button
