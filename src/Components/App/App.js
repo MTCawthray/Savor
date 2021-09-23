@@ -9,12 +9,12 @@ require('dotenv').config();
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     apiCall.getRecipes('pasta')
       .then((data) => setRecipes(data.hits))
-      .catch((err) => console.log('error from fetch', err))
-    console.log(recipes)
+      .catch((err) => setError(err))
   }, [])
 
   return (
