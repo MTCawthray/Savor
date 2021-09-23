@@ -1,16 +1,25 @@
 require('dotenv').config();
 
-//this should be grabbing my api key from the ignored .env directory
 const apiKey = process.env.REACT_APP_API_KEY;
-export const getRecipes = (type) => {
-  fetch(`https://api.spoonacular.com/recipes/?query=${type}&number=5&${apiKey}`)
-  .then(response => checkForErrors(response))
+const appID = process.env.REACT_APP_ID;
+
+const apiCall = {
+
+  getRecipes: (food) => {
+    return fetch(`https://api.edamam.com/api/recipes/v2?q=${food}&app_id=${appID}&app_key=${apiKey}&type=public`)
+    .then(response => checkForErrors(response))
+  }
+
 }
 
-const checkForErrors = (res) => {
-  if (res.ok) {
+const checkForErrors = (response) => {
+  if (response.ok) {
+    console.log('response ok', response);
     return response.json();
   } else {
+    console.log('error in check', response.status)
     throw `${response.status} ERROR. Could not access server data.`
   }
 }
+
+export default apiCall;
