@@ -1,16 +1,20 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Search from '../Search/Search';
 import DisplayArea from '../DisplayArea/DisplayArea';
-// require('dotenv').config();
 
 const App = () => {
+
   const [recipes, setRecipes] = useState([]);
 
   const addRecipes = (data) => {
     setRecipes(data)
   }
+
+  useEffect(() => {
+    setRecipes('');
+  }, [])
 
   return (
     <div className="App">
@@ -22,10 +26,10 @@ const App = () => {
       <main>
         <Switch>
           <Route exact path="/">
-          {recipes.length && <Redirect to="/recipes" />}
-          <Search 
-            addRecipes={addRecipes}
-          />
+            {recipes.length ? <Redirect to="/recipes" />: 
+            <Search 
+              addRecipes={addRecipes}
+            /> }
           </Route>
           <Route exact path="/recipes" render={ () => {
             return <DisplayArea 
