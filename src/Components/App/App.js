@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Search from '../Search/Search';
 import DisplayArea from '../DisplayArea/DisplayArea';
+require('dotenv').config();
 
 const App = () => {
 
@@ -14,10 +15,7 @@ const App = () => {
       </header>
       <main>
         <Route exact path="/" component={Search}/>
-        <Route exact path="/:recipeID" render={ ({ match }) => {
-          return <DisplayArea />
-          }
-        }/>
+        <Route exact path="/recipes" component={DisplayArea}/>
       </main>
     </div>
   );

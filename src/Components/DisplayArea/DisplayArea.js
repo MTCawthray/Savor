@@ -1,6 +1,6 @@
 import './DisplayArea.css';
 
-const DisplayArea = () => {
+const DisplayArea = ({ recipes }) => {
 
   return (
     <section className="display-section">
