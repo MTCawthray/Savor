@@ -14,10 +14,8 @@ const apiCall = {
 
 const checkForErrors = (response) => {
   if (response.ok) {
-    console.log('response ok', response);
     return response.json();
   } else {
-    console.log('error in check', response.status)
     throw `${response.status} ERROR. Could not access server data.`
   }
 }
