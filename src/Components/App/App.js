@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Search from '../Search/Search';
@@ -12,6 +12,10 @@ const App = () => {
     setRecipes(data)
   }
 
+  const clearRecipes = () => {
+    setRecipes('');
+  }
+
   useEffect(() => {
     setRecipes('');
   }, [])
@@ -20,7 +24,10 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>
-          Savor
+          <Link to="/"
+          onClick={clearRecipes}>
+            Savor
+          </Link>
         </h1>
       </header>
       <main>
