@@ -1,0 +1,32 @@
+article {
+  width: min-content;
+  background-color: ghostwhite;
+  padding-bottom: 5px;
+  margin: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.display-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image: url('../../Assets/ingredientsbackground.jpg');
+  background-size: cover;
+}
+
+.card-img {
+  z-index: 0;
+}
+
+h3 {
+  margin: 0px 0 0 10px;
+  color: grey;
+}

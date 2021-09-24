@@ -8,12 +8,12 @@ const DisplayArea = ({ recipes }) => {
       <article className="recipe-card">
         <a href={recipe.recipe.url}>
           <div className="name-and-img-container">
-            <h2>{recipe.recipe.label}</h2>
             <img src={recipe.recipe.image} alt={recipe.recipe.label} className="card-img"/>
+            <h2>{recipe.recipe.label}</h2>
           </div>
         </a>
         <h3>cuisine: {recipe.recipe.cuisineType}</h3>
-        <h3>calories: {recipe.recipe.calories}</h3>
+        <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
       </article>
     )
   })
