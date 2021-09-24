@@ -27,12 +27,15 @@ const App = () => {
   }
 
   useEffect(() => {
-    if (favorites.length) {
+    if (favorites.length >= 1) {
       localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
     }
   }, [favorites])
 
   useEffect(() => {
+    if (!favorites.length) {
+      setFavorites(JSON.parse(localStorage.getItem('favoriteRecipes')))
+    }
     setRecipes('');
   }, [])
 
