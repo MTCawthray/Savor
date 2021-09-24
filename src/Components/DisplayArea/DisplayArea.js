@@ -1,11 +1,14 @@
 import './DisplayArea.css';
+const { v4: uuidv4 } = require('uuid');
 
 const DisplayArea = ({ recipes }) => {
 
   const cards = recipes.map(recipe => {
     console.log(recipe)
     return (
-      <article className="recipe-card">
+      <article 
+        className="recipe-card"
+        key={uuidv4()}>
         <a 
           href={recipe.recipe.url}
           target="_blank"
