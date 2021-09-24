@@ -7,6 +7,7 @@ import DisplayArea from '../DisplayArea/DisplayArea';
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const addRecipes = (data) => {
     setRecipes(data)
@@ -15,6 +16,12 @@ const App = () => {
   const clearRecipes = () => {
     setRecipes('');
   }
+
+  useEffect(() => {
+    if (favorites.length) {
+      localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
+    }
+  }, [favorites])
 
   useEffect(() => {
     setRecipes('');
