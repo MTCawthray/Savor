@@ -45,7 +45,15 @@ const App = () => {
             Savor
           </Link>
         </h1>
-        <ul><Link to="/favorites">My Recipes</Link></ul>
+        <ul>
+          <Link to="/favorites">
+            My Recipes
+          </Link>
+          <Link to="/"
+          onClick={clearRecipes}>
+            search
+          </Link>
+        </ul>
       </header>
       <main>
         <Switch>
