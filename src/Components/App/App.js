@@ -65,12 +65,14 @@ const App = () => {
           </Route>
           <Route exact path="/recipes" render={ () => {
             return <DisplayArea 
+              favorites={favorites}
               recipes={recipes}
               handleFavorites={handleFavorites}
             />
           }} />
           <Route exact path="/favorites" render={ () => {
             return <DisplayArea 
+              favorites={favorites}
               recipes={favorites}
               handleFavorites={handleFavorites}
             />
