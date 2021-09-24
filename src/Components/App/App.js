@@ -16,6 +16,9 @@ const App = () => {
   const handleFavorites = (newFavorite) => {
     if (!favorites.includes(newFavorite)) {
       setFavorites([...favorites, newFavorite])
+    } else {
+      const updated = favorites.filter(favorite => favorite !== newFavorite)
+      setFavorites(updated);
     }
   }
 
