@@ -17,6 +17,7 @@ const DisplayArea = ({ recipes }) => {
         </a>
         <h3>cuisine: {recipe.recipe.cuisineType}</h3>
         <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
+        <h3>makes {recipe.recipe.yield} servings</h3>
       </article>
     )
   })
