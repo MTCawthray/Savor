@@ -1,7 +1,10 @@
 import './DisplayArea.css';
+import selected from '../../Assets/selected.png';
+import unselected from '../../Assets/unselected.png';
 const { v4: uuidv4 } = require('uuid');
 
-const DisplayArea = ({ recipes, handleFavorites }) => {
+const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
+
 
   const toggleFavorite = (e) => {
     e.preventDefault();
@@ -31,8 +34,22 @@ const DisplayArea = ({ recipes, handleFavorites }) => {
         <h3>cuisine: {recipe.recipe.cuisineType}</h3>
         <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
         <h3>makes {recipe.recipe.yield} servings</h3>
-        <button className="favorite-toggle" onClick={toggleFavorite}>Add</button>
+      {favorites.includes(recipe) && (
+        <img 
+          src={selected} 
+          alt="in favorites" 
+          className="favorite-toggle" 
+          onClick={toggleFavorite} />
+      )}
+      {!favorites.includes(recipe) && (
+        <img 
+          src={unselected} 
+          alt="add to favorites" 
+          className="favorite-toggle" 
+          onClick={toggleFavorite} />
+      )}
       </article>
+        
     )
   })
   return (
