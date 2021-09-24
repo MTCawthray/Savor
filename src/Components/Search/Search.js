@@ -2,15 +2,15 @@ import './Search.css';
 import React, { useState } from 'react';
 import apiCall from '../../utilities';
 
-const Search = () => {
-  const [recipes, setRecipes] = useState([]);
+const Search = ({addRecipes}) => {
+
   const [error, setError] = useState('');
   const [search, setSearch] = useState('');
 
   const submitSearch = (e) => {
     e.preventDefault();
     apiCall.getRecipes(search)
-      .then((data) => setRecipes(data.hits))
+      .then((data) => addRecipes(data.hits))
       .catch((err) => setError(err));
     setSearch('');
   }
@@ -25,8 +25,8 @@ const Search = () => {
         onChange={(e) => setSearch(e.target.value)}
       />
       <button
-      onClick={submitSearch}
-      >Search Recipes
+        onClick={submitSearch}
+        >search
       </button>
     </form>
   )
