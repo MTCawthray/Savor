@@ -6,7 +6,10 @@ const DisplayArea = ({ recipes }) => {
     console.log(recipe)
     return (
       <article className="recipe-card">
-        <a href={recipe.recipe.url}>
+        <a 
+          href={recipe.recipe.url}
+          target="_blank"
+          rel="noopener noreferrer">
           <div className="name-and-img-container">
             <img src={recipe.recipe.image} alt={recipe.recipe.label} className="card-img"/>
             <h2>{recipe.recipe.label}</h2>
