@@ -42,6 +42,7 @@ const App = () => {
             Savor
           </Link>
         </h1>
+        <ul><Link to="/favorites">My Recipes</Link></ul>
       </header>
       <main>
         <Switch>
@@ -56,7 +57,13 @@ const App = () => {
               recipes={recipes}
               addToFavorites={addToFavorites}
             />
-          }}
+          }} />
+          <Route exact path="/favorites" render={ () => {
+            return <DisplayArea 
+              recipes={favorites}
+              addToFavorites={addToFavorites}
+            />
+            }}
           />
         </Switch> 
       </main>
