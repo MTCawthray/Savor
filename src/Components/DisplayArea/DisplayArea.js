@@ -1,14 +1,14 @@
 import './DisplayArea.css';
 const { v4: uuidv4 } = require('uuid');
 
-const DisplayArea = ({ recipes, addToFavorites }) => {
-  
+const DisplayArea = ({ recipes, handleFavorites }) => {
+
   const toggleFavorite = (e) => {
     e.preventDefault();
     const fav = recipes.find(recipe => {
       return recipe.recipe.label === e.target.closest('article').id
     })
-    addToFavorites(fav);
+    handleFavorites(fav);
   }
 
   const cards = recipes.map(recipe => {

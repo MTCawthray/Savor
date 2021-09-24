@@ -13,7 +13,7 @@ const App = () => {
     setRecipes(data)
   }
 
-  const addToFavorites = (newFavorite) => {
+  const handleFavorites = (newFavorite) => {
     if (!favorites.includes(newFavorite)) {
       setFavorites([...favorites, newFavorite])
     }
@@ -55,13 +55,13 @@ const App = () => {
           <Route exact path="/recipes" render={ () => {
             return <DisplayArea 
               recipes={recipes}
-              addToFavorites={addToFavorites}
+              handleFavorites={handleFavorites}
             />
           }} />
           <Route exact path="/favorites" render={ () => {
             return <DisplayArea 
               recipes={favorites}
-              addToFavorites={addToFavorites}
+              handleFavorites={handleFavorites}
             />
             }}
           />
