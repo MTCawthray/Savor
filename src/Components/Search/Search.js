@@ -1,10 +1,9 @@
 import './Search.css';
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import apiCall from '../../utilities';
 
 const Search = ({addRecipes}) => {
-  
+
   const [error, setError] = useState('');
   const [search, setSearch] = useState('');
 
