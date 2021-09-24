@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 const DisplayArea = ({ recipes }) => {
 
   const cards = recipes.map(recipe => {
-    console.log(recipe)
+
     return (
       <article 
         className="recipe-card"
