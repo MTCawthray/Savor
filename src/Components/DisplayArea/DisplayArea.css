@@ -46,6 +46,7 @@ h3 {
   justify-content: space-around;
   background-image: url('../../Assets/ingredientsbackground.jpg');
   background-size: cover;
+  background-attachment: fixed;
 
 }
 
