@@ -9,6 +9,7 @@ article {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  box-shadow: 0 14px 15px rgb(0 0 0 / 53%);
 }
 
 article:hover {
