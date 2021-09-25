@@ -10,6 +10,10 @@ article {
   justify-content: space-around;
 }
 
+article:hover {
+  transform: scale(1.03);
+}
+
 a {
   text-decoration: none;
   color: black;
