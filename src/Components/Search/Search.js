@@ -25,9 +25,9 @@ const Search = ({addRecipes}) => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button
+      <button className="submit-btn"
         onClick={submitSearch}
-        >search
+        ><img src={searchIcon} alt="search button" className="search-btn-img"/>
       </button>
     </form>
   )
