@@ -1,6 +1,7 @@
 import './Search.css';
 import React, { useState } from 'react';
 import apiCall from '../../utilities';
+import searchIcon from '../../Assets/search.png';
 
 const Search = ({addRecipes}) => {
 
@@ -17,17 +18,20 @@ const Search = ({addRecipes}) => {
 
   return (
     <form>
-      <input 
-        type="text" 
-        className="search-bar" 
-        placeholder="find a recipe"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <button
-        onClick={submitSearch}
-        >search
-      </button>
+      <div className="search-container">
+        <input 
+          type="text" 
+          className="search-bar" 
+          placeholder="find a recipe"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className="submit-btn"
+          onClick={submitSearch}
+          ><img src={searchIcon} alt="search button" className="search-btn-img"/>
+        </button>
+      </div>
+      
     </form>
   )
 }

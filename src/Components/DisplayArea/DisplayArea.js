@@ -31,23 +31,27 @@ const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
             <h2>{recipe.recipe.label}</h2>
           </div>
         </a>
-        <h3>cuisine: {recipe.recipe.cuisineType}</h3>
-        <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
-        <h3>makes {recipe.recipe.yield} servings</h3>
-      {favorites.includes(recipe) && (
-        <img 
-          src={selected} 
-          alt="in favorites" 
-          className="favorite-toggle" 
-          onClick={toggleFavorite} />
-      )}
-      {!favorites.includes(recipe) && (
-        <img 
-          src={unselected} 
-          alt="add to favorites" 
-          className="favorite-toggle" 
-          onClick={toggleFavorite} />
-      )}
+        <div className="card-bottom">
+          <div className="detail-container">
+            <h3>cuisine: {recipe.recipe.cuisineType}</h3>
+            <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
+            <h3>makes {recipe.recipe.yield} servings</h3>
+          </div>
+          {favorites.includes(recipe) && (
+          <img 
+            src={selected} 
+            alt="in favorites" 
+            className="favorite-toggle" 
+            onClick={toggleFavorite} />
+        )}
+        {!favorites.includes(recipe) && (
+          <img 
+            src={unselected} 
+            alt="add to favorites" 
+            className="favorite-toggle" 
+            onClick={toggleFavorite} />
+        )}
+        </div>
       </article>
         
     )

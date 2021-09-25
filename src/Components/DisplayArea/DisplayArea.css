@@ -1,17 +1,25 @@
 article {
   width: min-content;
+  height: min-content;
   background-color: ghostwhite;
   padding-bottom: 5px;
-  margin: 10px;
+  margin: 25px 10px 5px 10px;  
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: 0 14px 15px rgb(0 0 0 / 53%);
+}
+
+article:hover {
+  transform: scale(1.03);
 }
 
 main {
   position: relative;
   top: 80px;
+  height: 90vh;
 }
 
 a {
@@ -19,21 +27,55 @@ a {
   color: inherit;
 }
 
+h2 {
+  margin: 6px;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  margin: 0px 0 0 10px;
+  color: grey;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
 .display-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   background-image: url('../../Assets/ingredientsbackground.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
+}
 
+.name-and-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.card-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .card-img {
   z-index: 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .favorite-toggle {
-  width: 1em;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0 4px;
 }
 
 h3 {
