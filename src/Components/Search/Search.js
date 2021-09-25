@@ -1,6 +1,7 @@
 import './Search.css';
 import React, { useState } from 'react';
 import apiCall from '../../utilities';
+import searchIcon from '../../Assets/search.png';
 
 const Search = ({addRecipes}) => {
 
