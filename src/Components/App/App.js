@@ -43,10 +43,10 @@ const App = () => {
         <h1>
           <Link to="/"
           onClick={() => setRecipes('')}>
-            Savor
+            savor
           </Link>
         </h1>
-        <ul>
+        <ul className ="header-links">
           <Link to="/favorites">
             My Recipes
           </Link>
