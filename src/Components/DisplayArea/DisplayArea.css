@@ -55,12 +55,21 @@ h3 {
   align-items: baseline;
 }
 
+.card-bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .card-img {
   z-index: 0;
 }
 
 .favorite-toggle {
-  width: 1em;
+  width: 1.3em;
+  height: 1.3em;
+  margin: 0 4px;
 }
 
 h3 {
