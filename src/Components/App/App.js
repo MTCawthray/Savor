@@ -26,7 +26,7 @@ const App = () => {
         <h1>
           <Link to="/"
           onClick={clearRecipes}>
-            Savor
+            SAVOR
           </Link>
         </h1>
       </header>
