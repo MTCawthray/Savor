@@ -18,6 +18,7 @@ article:hover {
 main {
   position: relative;
   top: 80px;
+  height: 90vh;
 }
 
 a {
@@ -46,12 +47,10 @@ h3 {
   flex-wrap: wrap;
   justify-content: space-around;
   background-image: url('../../Assets/ingredientsbackground.jpg');
-  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background: rgb(0 0 0 / 1%);
-  backdrop-filter: blur(10px);
-  height: 90vh;
-
+  background-position: center;
+  background-size: cover;
 }
 
 .name-and-img-container {
