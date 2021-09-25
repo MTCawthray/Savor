@@ -22,19 +22,17 @@ const App = () => {
     }
   }
 
-  const clearRecipes = () => {
-    setRecipes('');
-  }
-
   useEffect(() => {
     if (favorites.length >= 1) {
       localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
-    }
+    } 
+
   }, [favorites])
 
   useEffect(() => {
-    if (!favorites.length) {
-      setFavorites(JSON.parse(localStorage.getItem('favoriteRecipes')))
+    const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
+    if (!favorites.length && favs ) {
+      setFavorites(favs)
     }
     setRecipes('');
   }, [])
@@ -44,7 +42,7 @@ const App = () => {
       <header className="App-header">
         <h1>
           <Link to="/"
-          onClick={clearRecipes}>
+          onClick={() => setRecipes('')}>
             Savor
           </Link>
         </h1>
@@ -53,7 +51,7 @@ const App = () => {
             My Recipes
           </Link>
           <Link to="/"
-          onClick={clearRecipes}>
+          onClick={() => setRecipes('')}>
             search
           </Link>
         </ul>
