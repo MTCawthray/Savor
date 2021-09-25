@@ -7,6 +7,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-around;
 }
 
 a {
@@ -14,6 +15,14 @@ a {
   color: black;
 }
 
+h2 {
+  margin: 6px;
+}
+
+h3 {
+  margin: 0px 0 0 10px;
+  color: grey;
+}
 .display-section {
   display: flex;
   flex-wrap: wrap;
@@ -22,11 +31,12 @@ a {
   background-size: cover;
 }
 
-.card-img {
-  z-index: 0;
+.name-and-img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 
-h3 {
-  margin: 0px 0 0 10px;
-  color: grey;
+.card-img {
+  z-index: 0;
 }
