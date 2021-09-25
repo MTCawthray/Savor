@@ -32,6 +32,10 @@ a {
   z-index: 0;
 }
 
+.favorite-toggle {
+  width: 1em;
+}
+
 h3 {
   margin: 0px 0 0 10px;
   color: grey;
