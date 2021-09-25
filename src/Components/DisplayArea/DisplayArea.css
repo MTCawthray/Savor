@@ -9,6 +9,11 @@ article {
   align-items: flex-start;
 }
 
+main {
+  position: relative;
+  top: 80px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -20,6 +25,7 @@ a {
   justify-content: space-around;
   background-image: url('../../Assets/ingredientsbackground.jpg');
   background-size: cover;
+
 }
 
 .card-img {

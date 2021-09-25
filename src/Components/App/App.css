@@ -16,7 +16,10 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
   overflow: hidden;
+  position: fixed;
+  z-index: 1;
 }
 
 form {
