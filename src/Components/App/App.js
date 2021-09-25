@@ -7,16 +7,33 @@ import DisplayArea from '../DisplayArea/DisplayArea';
 const App = () => {
 
   const [recipes, setRecipes] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const addRecipes = (data) => {
     setRecipes(data)
   }
 
-  const clearRecipes = () => {
-    setRecipes('');
+  const handleFavorites = (newFavorite) => {
+    if (!favorites.includes(newFavorite)) {
+      setFavorites([...favorites, newFavorite])
+    } else {
+      const updated = favorites.filter(favorite => favorite !== newFavorite)
+      setFavorites(updated);
+    }
   }
 
   useEffect(() => {
+    if (favorites.length >= 1) {
+      localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
+    } 
+
+  }, [favorites])
+
+  useEffect(() => {
+    const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
+    if (!favorites.length && favs ) {
+      setFavorites(favs)
+    }
     setRecipes('');
   }, [])
 
@@ -25,10 +42,19 @@ const App = () => {
       <header className="App-header">
         <h1>
           <Link to="/"
-          onClick={clearRecipes}>
-            Savor
+          onClick={() => setRecipes('')}>
+            savor
           </Link>
         </h1>
+        <ul className ="header-links">
+          <Link to="/favorites">
+            My Recipes
+          </Link>
+          <Link to="/"
+          onClick={() => setRecipes('')}>
+            search
+          </Link>
+        </ul>
       </header>
       <main>
         <Switch>
@@ -40,9 +66,18 @@ const App = () => {
           </Route>
           <Route exact path="/recipes" render={ () => {
             return <DisplayArea 
+              favorites={favorites}
               recipes={recipes}
+              handleFavorites={handleFavorites}
             />
-          }}
+          }} />
+          <Route exact path="/favorites" render={ () => {
+            return <DisplayArea 
+              favorites={favorites}
+              recipes={favorites}
+              handleFavorites={handleFavorites}
+            />
+            }}
           />
         </Switch> 
       </main>

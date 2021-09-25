@@ -14,9 +14,14 @@ article:hover {
   transform: scale(1.03);
 }
 
+main {
+  position: relative;
+  top: 80px;
+}
+
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 h2 {
@@ -41,6 +46,7 @@ h3 {
   justify-content: space-around;
   background-image: url('../../Assets/ingredientsbackground.jpg');
   background-size: cover;
+
 }
 
 .name-and-img-container {
@@ -51,4 +57,13 @@ h3 {
 
 .card-img {
   z-index: 0;
+}
+
+.favorite-toggle {
+  width: 1em;
+}
+
+h3 {
+  margin: 0px 0 0 10px;
+  color: grey;
 }
