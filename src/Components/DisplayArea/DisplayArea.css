@@ -23,6 +23,13 @@ h3 {
   margin: 0px 0 0 10px;
   color: grey;
 }
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
 .display-section {
   display: flex;
   flex-wrap: wrap;
