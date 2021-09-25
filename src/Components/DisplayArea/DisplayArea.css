@@ -1,8 +1,9 @@
 article {
   width: min-content;
+  height: min-content;
   background-color: ghostwhite;
   padding-bottom: 5px;
-  margin: 10px;
+  margin: 25px 10px 5px 10px;  
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -49,6 +50,7 @@ h3 {
   background-attachment: fixed;
   background: rgb(0 0 0 / 1%);
   backdrop-filter: blur(10px);
+  height: 90vh;
 
 }
 
