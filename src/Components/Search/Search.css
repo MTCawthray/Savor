@@ -1,0 +1,15 @@
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar {
+  height: 2em;
+  width: 25vw;
+  border: none;
+  border-radius: 30px;
+  background-color: #fee782ab;
+  color: #521d2f;
+  font-size: x-large;
+  padding-left: 17px;
+}
