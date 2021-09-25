@@ -18,9 +18,11 @@ const DisplayArea = ({ recipes }) => {
             <h2>{recipe.recipe.label}</h2>
           </div>
         </a>
-        <h3>cuisine: {recipe.recipe.cuisineType}</h3>
-        <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
-        <h3>makes {recipe.recipe.yield} servings</h3>
+        <div className="detail-container">
+          <h3>cuisine: {recipe.recipe.cuisineType}</h3>
+          <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
+          <h3>makes {recipe.recipe.yield} servings</h3>
+        </div>
       </article>
     )
   })
