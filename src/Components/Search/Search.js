@@ -5,16 +5,34 @@ import searchIcon from '../../Assets/search.png';
 
 const Search = ({addRecipes}) => {
 
-  const [inputError, setInputError] = useState('Please enter valid search')
+  const [inputError, setInputError] = useState('')
   const [serverError, setServerError] = useState('');
   const [search, setSearch] = useState('');
 
   const submitSearch = (e) => {
     e.preventDefault();
+    checkInputErrors();
     apiCall.getRecipes(search)
-      .then((data) => addRecipes(data.hits))
+      .then((data) => checkRecipeExists(data))
       .catch((err) => setServerError(err));
     setSearch('');
+  }
+
+  const checkRecipeExists = (search) => {   
+    if (!search.hits.length) {
+      setInputError('Your search yielded no results. Try another!')
+    } 
+    addRecipes(search.hits)
+  }
+
+  const checkInputErrors = () => {
+    setInputError('')
+    if (search === '') {
+      setInputError('You must enter a recipe query before you submit')
+    } else if (search === undefined) {
+      setInputError('undefined')
+    }
+
   }
 
   return (
