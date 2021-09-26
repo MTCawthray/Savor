@@ -1,6 +1,6 @@
 describe('Navigate back home user flows', () => {
 
-  it('As a user, I should be able to navigate back to the homepage by clicking on search in the header', () => {
+  beforeEach(() => {
     cy.intercept('GET', '/recipes', {
       statusCode: 200,
       body: {
@@ -21,7 +21,10 @@ describe('Navigate back home user flows', () => {
       } 
     )
     cy.visit('http://localhost:3000')
-      .get('.header-links > [href="/"]')
+  })
+
+  it('As a user, I should be able to navigate back to the homepage by clicking on search in the header', () => {
+      cy.get('.header-links > [href="/"]')
         .click()
         .url()
         .should('contain', '/')
@@ -33,6 +36,10 @@ describe('Navigate back home user flows', () => {
       .get('header')
         .should('contain', 'search')
       .get('.submit-btn')
+  })
+
+  it('As a user, I should be able to navigate back to the homepage by clicking on the app name in the header', () => {
+
   })
 
 });
