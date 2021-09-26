@@ -21,6 +21,23 @@ describe('Adding recipes to My Recipes section', ()=> {
       } 
     )
     cy.visit('http://localhost:3000')
+    cy.get('.search-bar')
+    .click()
+    .type('carrot limeade')
+      .get('.submit-btn')
+      .click()
+  })
+
+  it('As a user, I should see a bookmark icon on a recipe card that is unchecked', () => {
+    cy.get('.favorite-toggle')
+      .should('exist')
+  })
+
+  it('As a user, when I click the bookmark icon, it should turn red', () => {
+    cy.get('.favorite-toggle')
+      .click()
+    cy.get('.favorite-toggle')
+      .should('exist')
   })
 
 })
