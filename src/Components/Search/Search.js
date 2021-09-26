@@ -5,7 +5,7 @@ import searchIcon from '../../Assets/search.png';
 
 const Search = ({addRecipes}) => {
 
-  // const [input]
+  const [inputError, setInputError] = useState('Please enter valid search')
   const [serverError, setServerError] = useState('');
   const [search, setSearch] = useState('');
 
