@@ -2,6 +2,7 @@ import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Search from '../Search/Search';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import DisplayArea from '../DisplayArea/DisplayArea';
 
 const App = () => {
@@ -73,6 +74,12 @@ const App = () => {
               favorites={favorites}
               recipes={favorites}
               handleFavorites={handleFavorites}
+            />
+            }}
+          />
+          <Route render={ () => {
+            return <ErrorPage 
+              message={'serverError'}
             />
             }}
           />
