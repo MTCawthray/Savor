@@ -51,7 +51,8 @@ const Search = ({addRecipes}) => {
           ><img src={searchIcon} alt="search button" className="search-btn-img"/>
         </button>
       </div>
-      { inputError || serverError && <ErrorPage message={inputError} fetchError={serverError} />}
+      { inputError && <ErrorPage message={inputError} /> }
+      { serverError && <ErrorPage message={serverError} /> }
       
     </form>
   )
