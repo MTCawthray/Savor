@@ -1,6 +1,7 @@
 import './DisplayArea.css';
 import selected from '../../Assets/selected.png';
 import unselected from '../../Assets/unselected.png';
+import ErrorPage from '../ErrorPage/ErrorPage';
 const { v4: uuidv4 } = require('uuid');
 
 const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
@@ -59,6 +60,7 @@ const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
   return (
     <section className="display-section">
       {cards}
+      {!cards.length && <ErrorPage message={"You don't have any recipes saved yet. Go find some that you like!"} />}
     </section>
   )
 }
