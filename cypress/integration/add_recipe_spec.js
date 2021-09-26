@@ -1,6 +1,7 @@
 describe('Adding recipes to My Recipes section', ()=> {
 
   beforeEach(() => {
+    localStorage.clear();
     cy.intercept('GET', '/recipes', {
       statusCode: 200,
       body: {
@@ -26,18 +27,23 @@ describe('Adding recipes to My Recipes section', ()=> {
     .type('carrot limeade')
       .get('.submit-btn')
       .click()
-  })
+  });
 
   it('As a user, I should see a bookmark icon on a recipe card that is unchecked', () => {
     cy.get('.favorite-toggle')
       .should('exist')
-  })
+  });
 
   it('As a user, when I click the bookmark icon, it should turn red', () => {
     cy.get('.favorite-toggle')
       .click()
     cy.get('.favorite-toggle')
       .should('exist')
-  })
+  });
 
-})
+  it('As a user, I should see my selection in the My Recipe section of the app', () => {
+
+
+  });
+
+});
