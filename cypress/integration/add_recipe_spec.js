@@ -42,8 +42,26 @@ describe('Adding recipes to My Recipes section', ()=> {
   });
 
   it('As a user, I should see my selection in the My Recipe section of the app', () => {
-
-
+    cy.get('.favorite-toggle')
+      .click()
+      cy.get('[href="/favorites"]')
+        .click()
+        .url()
+        .should('include', '/favorites')
+      .get('article')
+        .should('have.length', 1)
+      .get('article').get('.card-img')
+        .should('exist')
+      .get('article')
+        .contains('Carrot Limeade')
+      .get('article')
+        .contains('cuisine: american')
+      .get('article')
+        .contains('calories: 357')
+      .get('article')
+        .contains('makes 8 servings')
+      .get('article')
+        .get('.favorite-toggle')      
   });
 
 });
