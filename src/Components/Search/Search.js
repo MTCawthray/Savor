@@ -5,14 +5,15 @@ import searchIcon from '../../Assets/search.png';
 
 const Search = ({addRecipes}) => {
 
-  const [error, setError] = useState('');
+  // const [input]
+  const [serverError, setServerError] = useState('');
   const [search, setSearch] = useState('');
 
   const submitSearch = (e) => {
     e.preventDefault();
     apiCall.getRecipes(search)
       .then((data) => addRecipes(data.hits))
-      .catch((err) => setError(err));
+      .catch((err) => setServerError(err));
     setSearch('');
   }
 
