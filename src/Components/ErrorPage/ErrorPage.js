@@ -1,11 +1,10 @@
 import './ErrorPage.css';
 
-const ErrorPage = ({ message, fetchError }) => {
+const ErrorPage = ({ message }) => {
 
   return (
     <div className="error-display">
-      <h4>{message}</h4>
-      <h4>{fetchError}</h4>
+      <h4 className="error-message">{message}</h4>
     </div>
   )
 }
