@@ -1,0 +1,15 @@
+.error-message {
+  font-size: x-large;
+  margin: 0 10px 0 10px;
+  color: rgb(181, 44, 20);
+}
+
+.error-display {
+  display: flex;
+  align-items: center;
+  background:rgba(245, 222, 179, 0.599);
+  margin: 10px;
+  height: 12vh;
+  border-radius: 30px;
+  padding: 10px;
+}
