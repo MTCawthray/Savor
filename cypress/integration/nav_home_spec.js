@@ -24,7 +24,12 @@ describe('Navigate back home user flows', () => {
   })
 
   it('As a user, I should be able to navigate back to the homepage by clicking on search in the header', () => {
-      cy.get('.header-links > [href="/"]')
+    cy.get('.search-bar')
+    .click()
+    .type('carrot limeade')
+      .get('.submit-btn')
+      .click()
+      .get('.header-links > [href="/"]')
         .click()
         .url()
         .should('contain', '/')
@@ -39,7 +44,23 @@ describe('Navigate back home user flows', () => {
   })
 
   it('As a user, I should be able to navigate back to the homepage by clicking on the app name in the header', () => {
-
+    cy.get('.search-bar')
+    .click()
+    .type('carrot limeade')
+      .get('.submit-btn')
+      .click()
+    cy.get('h1 > a')
+      .click()
+      .url()
+        .should('contain', '/')
+      .get('.search-bar')
+      .get('header')
+        .should('contain', 'savor')
+      .get('header')
+        .should('contain', 'My Recipes')
+      .get('header')
+        .should('contain', 'search')
+      .get('.submit-btn')
   })
 
 });
