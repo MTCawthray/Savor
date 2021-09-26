@@ -12,6 +12,8 @@ const Search = ({addRecipes}) => {
 
   const submitSearch = (e) => {
     e.preventDefault();
+    setInputError('');
+    setServerError('');
     checkInputErrors();
     apiCall.getRecipes(search)
       .then((data) => checkRecipeExists(data))
@@ -20,7 +22,7 @@ const Search = ({addRecipes}) => {
   }
 
   const checkRecipeExists = (search) => {   
-    if (!search.hits.length) {
+    if (!search.hits.length && !inputError) {
       setInputError('Your search yielded no results. Try another!')
     } 
     addRecipes(search.hits)
@@ -29,11 +31,8 @@ const Search = ({addRecipes}) => {
   const checkInputErrors = () => {
     setInputError('')
     if (search === '') {
-      setInputError('You must enter a recipe query before you submit')
-    } else if (search === undefined) {
-      setInputError('undefined')
-    }
-
+      return setInputError('You must enter a recipe query before you submit')
+    } 
   }
 
   return (
