@@ -21,11 +21,12 @@ const Search = ({addRecipes}) => {
     setSearch('');
   }
 
-  const checkRecipeExists = (search) => {   
-    if (!search.hits.length && !inputError) {
+  const checkRecipeExists = (query) => { 
+    console.log(search)  
+    if (!query.hits.length && !inputError) {
       setInputError('Your search yielded no results. Try another!')
     } 
-    addRecipes(search.hits)
+    addRecipes(query.hits)
   }
 
   const checkInputErrors = () => {
