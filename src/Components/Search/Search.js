@@ -2,6 +2,7 @@ import './Search.css';
 import React, { useState } from 'react';
 import apiCall from '../../utilities';
 import searchIcon from '../../Assets/search.png';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Search = ({addRecipes}) => {
 
@@ -50,6 +51,7 @@ const Search = ({addRecipes}) => {
           ><img src={searchIcon} alt="search button" className="search-btn-img"/>
         </button>
       </div>
+      { inputError && <ErrorPage message={inputError}/>}
       
     </form>
   )
