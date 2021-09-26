@@ -38,6 +38,8 @@ describe('Recipe search user flows', () => {
             .should('include', '/recipes')
               .get('article')
                 .should('have.length', 1)
+              .get('article').get('.card-img')
+                .should('exist')
               .get('article')
                 .contains('Carrot Limeade')
               .get('article')
@@ -47,8 +49,7 @@ describe('Recipe search user flows', () => {
               .get('article')
                 .contains('makes 8 servings')
               .get('article')
-                .get('.favorite-toggle')
-                
+                .get('.favorite-toggle')      
     })
 
 });
