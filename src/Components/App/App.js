@@ -77,12 +77,6 @@ const App = () => {
             />
             }}
           />
-          <Route render={ () => {
-            return <ErrorPage 
-              message={'serverError'}
-            />
-            }}
-          />
         </Switch> 
       </main>
     </div>
