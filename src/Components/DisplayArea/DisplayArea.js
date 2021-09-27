@@ -38,14 +38,14 @@ const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
             <h3>calories: {recipe.recipe.calories.toFixed()}</h3>
             <h3>makes {recipe.recipe.yield} servings</h3>
           </div>
-          {favorites.includes(recipe) && (
+          {(favorites.includes(recipe)) ? (
           <img 
             src={selected} 
             alt="in favorites" 
             className="favorite-toggle" 
             onClick={toggleFavorite} />
-        )}
-        {!favorites.includes(recipe) && (
+        ) :
+        (
           <img 
             src={unselected} 
             alt="add to favorites" 
