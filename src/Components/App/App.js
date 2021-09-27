@@ -31,8 +31,9 @@ const App = () => {
     const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
     if (!favorites.length && favs ) {
       setFavorites(favs)
-    }
+    } else {
     setRecipes('');
+    }
   }, [])
 
   return (
