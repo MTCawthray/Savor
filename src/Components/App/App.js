@@ -31,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
-    if (!favorites.length && favs ) {
+    if ( favs ) {
       setFavorites([...favs])
     } 
     setRecipes('');
