@@ -40,4 +40,11 @@ describe('Removing recipes from My Recipe section', () => {
       .contains('You don\'t have any recipes saved yet. Go find some that you like!')
   });
 
+  it('As a user, I should not see any recipe cards if there are no favorites', () => {
+    cy.get('.favorite-toggle')
+    .click()
+    cy.get('article')
+      .should('not.exist')
+  });
+
 });
