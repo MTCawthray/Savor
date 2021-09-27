@@ -27,6 +27,17 @@ describe('Removing recipes from My Recipe section', () => {
     .type('carrot limeade')
       .get('.submit-btn')
       .click()
+      cy.get('.favorite-toggle')
+      .click()
+      cy.get('[href="/favorites"]')
+        .click()
+  });
+
+  it('As a user, I should be able to remove a favorited recipe by clicking the red favorite icon', () => {
+    cy.get('.favorite-toggle')
+    .click()
+    cy.get('.error-display')
+      .contains('You don\'t have any recipes saved yet. Go find some that you like!')
   });
 
 });
