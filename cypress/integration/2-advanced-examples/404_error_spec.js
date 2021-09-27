@@ -12,7 +12,15 @@ describe('Error handling for 404 error', () => {
         }
       ]
     })
-    cy.visit('https://localhost:3000')
+    cy.visit('http://localhost:3000')
+    cy.get('.search-bar')
+      .type('hot dogs')
+      .get('.submit-btn')
+      .click()
   });
+
+  it('As a user, I should see a message that displays a 400 level error from the fetch response.', () => {
+
+  })
 
 });
