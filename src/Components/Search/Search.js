@@ -2,18 +2,37 @@ import './Search.css';
 import React, { useState } from 'react';
 import apiCall from '../../utilities';
 import searchIcon from '../../Assets/search.png';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const Search = ({addRecipes}) => {
 
-  const [error, setError] = useState('');
+  const [inputError, setInputError] = useState('')
+  const [serverError, setServerError] = useState('');
   const [search, setSearch] = useState('');
 
   const submitSearch = (e) => {
     e.preventDefault();
+    setInputError('');
+    setServerError('');
+    checkInputErrors();
     apiCall.getRecipes(search)
-      .then((data) => addRecipes(data.hits))
-      .catch((err) => setError(err));
+      .then((data) => checkRecipeExists(data))
+      .catch((err) => setServerError(err));
     setSearch('');
+  }
+
+  const checkRecipeExists = (query) => { 
+    if (!query.hits.length && !inputError) {
+      setInputError('Your search yielded no results. Try another!')
+    } 
+    addRecipes(query.hits)
+  }
+
+  const checkInputErrors = () => {
+    setInputError('')
+    if (search === '') {
+      return setInputError('You must enter a recipe query before you submit')
+    } 
   }
 
   return (
@@ -31,6 +50,8 @@ const Search = ({addRecipes}) => {
           ><img src={searchIcon} alt="search button" className="search-btn-img"/>
         </button>
       </div>
+      { inputError && <ErrorPage message={inputError} /> }
+      { serverError && <ErrorPage message={serverError} /> }
       
     </form>
   )
