@@ -12,13 +12,16 @@ const Search = ({addRecipes}) => {
 
   const submitSearch = (e) => {
     e.preventDefault();
-    setInputError('');
     setServerError('');
-    checkInputErrors();
-    apiCall.getRecipes(search)
+    setInputError('');
+    if (checkInputErrors()){
+      return
+    } else {
+      apiCall.getRecipes(search)
       .then((data) => checkRecipeExists(data))
       .catch((err) => setServerError(err));
-    setSearch('');
+      setSearch('');
+    }
   }
 
   const checkRecipeExists = (query) => { 
@@ -31,7 +34,8 @@ const Search = ({addRecipes}) => {
   const checkInputErrors = () => {
     setInputError('')
     if (search === '') {
-      return setInputError('You must enter a recipe query before you submit')
+      setInputError('You must enter a recipe query before you submit')
+      return true;
     } 
   }
 
