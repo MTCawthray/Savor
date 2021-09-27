@@ -22,7 +22,6 @@ const Search = ({addRecipes}) => {
   }
 
   const checkRecipeExists = (query) => { 
-    console.log(search)  
     if (!query.hits.length && !inputError) {
       setInputError('Your search yielded no results. Try another!')
     } 
