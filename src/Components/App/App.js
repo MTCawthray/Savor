@@ -77,6 +77,12 @@ const App = () => {
             />
             }}
           />
+          <Route render={ () => {
+            return <ErrorPage 
+              message={'page not found, would you like to go home?'}
+            />
+            }}
+          />
         </Switch> 
       </main>
     </div>
