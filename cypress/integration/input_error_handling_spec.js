@@ -11,4 +11,13 @@ describe('Error handling for search input', () => {
       .contains('You must enter a recipe query before you submit')
   });
 
+  it('As a user, I should see an error message if my search yields no results', () => {
+    cy.get('.search-bar')
+      .type('afdaes')
+      .get('.submit-btn')
+      .click()
+    cy.get('.error-display')
+      .contains('Your search yielded no results. Try another!')
+  })
+
 });
