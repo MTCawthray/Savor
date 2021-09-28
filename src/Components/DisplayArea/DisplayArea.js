@@ -59,8 +59,8 @@ const DisplayArea = ({ favorites, recipes, handleFavorites }) => {
   })
   return (
     <section className="display-section">
-      {cards}
-      {!cards.length && <ErrorPage message={"You don't have any recipes saved yet. Go find some that you like!"} />}
+    
+      {!cards.length ? <ErrorPage message={"You don't have any recipes saved yet. Go find some that you like!"} /> : cards}
     </section>
   )
 }
