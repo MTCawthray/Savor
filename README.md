@@ -17,8 +17,6 @@ View the deployed app at [this link](https://recipe-savor.herokuapp.com/)!
 
 ## Examples
 
-[image goes here]()
-
 [gif goes here]()
 
 ## Setup Instructions
@@ -33,15 +31,30 @@ View the deployed app at [this link](https://recipe-savor.herokuapp.com/)!
  + Once you have Savor open in your browser, you will be greeted with a simple home page that consists of a header and a search bar.
  + Simply type a query into the search bar, for example "Cauliflower Steaks", and click on the the magnifine glass icon (or just tap enter!)
  + You will be shown the results of your query. 
+ + The recipe cards will show you some brief but relevant info including the recipe's title, cuisine, serving amount, calories, and a thumbnail image of the recipe.
+ + Clicking on the image or recipe title will open a new window in your browser that takes you to the source article.
+ + To favorite a recipe, simply click on the bookmark icon in the lower right hand corner of the card. The icon will turn red, and when you navigate to the 'My Recipes' page, you will see it displayed.
+ + To unfavorite a recipe, click on the red bookmark icon, and it will be removed from your favorites.
 
 ## Learning goals
-  + 
+  + Design an app that fits the needs of a specific audience.
+  + Deliver a workable product in the timeframe provided.
+  + Create a simple architecture using the React framework and implement React-Router to handle url paths.
   
 ## Future features
-  + 
+  + I plan on adding extra filtering functionality to the recipe search. For example- A user would be able to set a calorie range, or define what type of quisine they are specifically looking for.
+  + Using an express server to handle the favoriting instead of relying on local storage in the browser.
+  + Multi-user login functionality to handle more than one chef using the same browser.
 
 ## Technologies used
-  + 
+  + React
+  + React-Router
+  + React-Hooks
+  + Cypress
+  + JavaScript
+  + Heroku
+  + GitHub Projects
+  + Miro
   
 
 ## Contributors
@@ -49,6 +62,8 @@ View the deployed app at [this link](https://recipe-savor.herokuapp.com/)!
   
 
 ## Reflections And Wins
-  +
+  + As always, the relatively short time frame for seeding the concept to delivering the minimum viable product is a challenge. This forced me to plan efficiently and set attainable goalposts, which in the end were crucial! 
+  + Being a amateur home cook, I'm proud to have designed an app that I will actually use in my daily life! There is something so rewarding about taking a project from 'practice to practical'.
+  + The repetition of building in the React environment has been very useful to my workflow. I feel that I am getting a better grasp of the overall structure of how apps can be made, as well as getting quicker at achieving functionality.
 
   [Return to top](#savor)
