@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
     console.log('favs', favs);
-    if (!favorites.length && favs ) {
+    if (!favorites.length && favs !== null ) {
       setFavorites(favs)
     } 
     setRecipes('');
