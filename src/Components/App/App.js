@@ -25,18 +25,21 @@ const App = () => {
 
   useEffect(() => {
     if (favorites.length) {
+      localStorage.clear();
       localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
     }
   }, [favorites])
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
+    console.log('favs', favs);
     if (!favorites.length && favs ) {
-      setFavorites([...favs])
+      setFavorites(favs)
     } 
     setRecipes('');
-    
+    // eslint-disable-next-line
   }, [])
+
 
   return (
     <div className="App">

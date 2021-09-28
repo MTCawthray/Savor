@@ -16,7 +16,7 @@ const checkForErrors = (response) => {
   if (response.ok) {
     return response.json();
   } else {
-    throw `${response.status} ERROR. Could not access server data.`
+    throw new Error(response.status)
   }
 }
 
