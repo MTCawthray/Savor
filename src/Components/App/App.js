@@ -35,7 +35,7 @@ const App = () => {
       setFavorites([...favs])
     } 
     setRecipes('');
-    
+    // eslint-disable-next-line
   }, [])
 
   // useEffect(() => {
