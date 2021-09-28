@@ -31,12 +31,23 @@ const App = () => {
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
-    if ( favs ) {
+    if (!favorites.length && favs ) {
       setFavorites([...favs])
     } 
     setRecipes('');
     
   }, [])
+
+  // useEffect(() => {
+  //   const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
+  //   if ( favs.length && favs !== null ) {
+  //     setFavorites([...favs])
+  //   } else {
+  //     setFavorites([])
+  //   }
+  //   setRecipes('');
+    
+  // }, [])
 
   return (
     <div className="App">
