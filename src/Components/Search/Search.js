@@ -19,7 +19,7 @@ const Search = ({addRecipes}) => {
     } else {
       apiCall.getRecipes(search)
       .then((data) => checkRecipeExists(data))
-      .catch((err) => setServerError(err));
+      .catch((e) => setServerError(`${e.message} Error: cannot access server`));
       setSearch('');
     }
   }
