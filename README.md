@@ -17,7 +17,8 @@ View the deployed app at [this link](https://recipe-savor.herokuapp.com/)!
 
 ## Examples
 
-[gif goes here]()
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/81891209/135012921-41e03440-65b1-40ed-b25d-eea7568648e0.gif)
+
 
 ## Setup Instructions
  + The easiest way to experience Savor is to view [this deployed link](https://recipe-savor.herokuapp.com/).
