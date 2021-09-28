@@ -38,16 +38,6 @@ const App = () => {
     // eslint-disable-next-line
   }, [])
 
-  // useEffect(() => {
-  //   const favs = JSON.parse(localStorage.getItem('favoriteRecipes'))
-  //   if ( favs.length && favs !== null ) {
-  //     setFavorites([...favs])
-  //   } else {
-  //     setFavorites([])
-  //   }
-  //   setRecipes('');
-    
-  // }, [])
 
   return (
     <div className="App">
